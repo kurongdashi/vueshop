@@ -1,4 +1,4 @@
-#vue-router 规则详细配置
+# vue-router 规则详细配置
 
 ## 路由实质是对history的封装,路由一般单独抽取成一个文件，然后由main.js加载
 ``` 
@@ -6,7 +6,7 @@
 history.pushState('desc','test','/admin')
 ```
 
-##1. path 
+## 1. path 
 ``` 
 #1 默认 / 形式的
 export default new Router({
@@ -34,7 +34,7 @@ routes: [
 <span>{{$route.params.goodsId}}</span>
   
 ```
-##2. 路由模式 mode 配置
+## 2. 路由模式 mode 配置
 1. 默认是hash模式 ，带#
 >http://localhost:8080/#/goods/123
 
@@ -52,7 +52,7 @@ export default new Router({
 })
 
 ```
-##3.子路由
+## 3.子路由
 1. 配置
 ``` 
 export default new Router({
@@ -80,7 +80,7 @@ export default new Router({
 
 ```
 
-##4.路由跳转，页面切换
+## 4.路由跳转，页面切换
 ``` 
   # 直接跳转
   this.$router.push('/world')
@@ -96,4 +96,4 @@ export default new Router({
  #获取参数
  <div>{{$route.query.id}}</div>
 ```
-#参考链接 [vue-router](https://router.vuejs.org/zh-cn/installation.html)
+# 参考链接 [vue-router](https://router.vuejs.org/zh-cn/installation.html)

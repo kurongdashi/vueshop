@@ -1,4 +1,4 @@
-#vue-resource 
+# vue-resource 
 ## 参考链接：[resource](https://www.jianshu.com/p/3ce2bd36596e)
 ## 1 get请求
 ``` 
@@ -18,7 +18,7 @@ this.$http.get('package.json',{
                   console.log(res.data);
               });
 ```
-##2 post 
+## 2 post 
 ``` 
 this.$http.post(url,[body],[options]).then(...)
 

@@ -1,5 +1,5 @@
-#axios 插件 和vue-resource类似
-##参考 [axios](https://www.jianshu.com/p/df464b26ae58)
+# axios 插件 和vue-resource类似
+## 参考 [axios](https://www.jianshu.com/p/df464b26ae58)
 ## 1 get方式
  ``` 
  axios.get(url,[options]).then(...).catch(...)
