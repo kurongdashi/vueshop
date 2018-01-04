@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>axios使用</title>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta.2/css/bootstrap.css">
+</head>
+<body>
+<div id="app">
+  <button @click="get" class="btn btn-primary">get</button>
+  <button @click="post" class="btn btn-primary">post</button>
+  <button @click="jsonp" class="btn btn-primary">jsonp</button>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: {},
+    //生命周期钩子回调函数
+    mounted(){
+      axios.interceptors.request.use((config) => {
+        console.log('axios requese init');
+        return config;
+      });
+      axios.interceptors.response.use((config) => {
+        console.log('axios response init');
+        return config;
+      });
+    },
+    methods: {
+      get(){
+          axios.get('package.json',{
+              params:{
+                  id:'123',
+                name:'zhangsanfeng'
+              },
+              headers:{
+                  token:'abcdef'
+              }
+          }).then(res=>{
+              console.log(res.data)
+
+          }).catch(err=>{
+              console.log(err);
+          })
+      },
+      post(){
+          axios.post('package.json',{
+            id:'123',
+            name:'zhangsanfeng'
+          },{
+            headers:{
+              token:'abcdef'
+            }
+          }).then(res=>{
+            console.log(res.data)
+
+          }).catch(err=>{
+            console.log(err);
+          });
+      },
+      jsonp(){
+        axios({
+            url:'package.json',
+            method:'post',
+            params:{id:"axios",name:'lisi'},
+            data:{
+                id:'123',
+              name:'wangwu'
+            }
+
+        }).then(res=>{
+            console.log(res.data);
+        }).catch(err=>{
+            console.log(err);
+        });
+      }
+    }
+  });
+</script>
+</html>
